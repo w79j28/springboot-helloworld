@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: hello-test
-          image: 192.168.15.120:5000/hello_images:v9
+          image: 192.168.15.120:5000/hello_images:v${BUILD_NUMBER}
           env:
             - name: TEST_URL
               valueFrom:
@@ -27,7 +27,8 @@ spec:
             - containerPort: 9999
         
       imagePullSecrets:
-        - name: myregistrykey
+        #- name: myregistrykey
+        - name: $KUBERNETES_SECRET_NAME
 ---
 
 kind: Service
