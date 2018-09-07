@@ -43,3 +43,13 @@ spec:
   ports:
   - port: 9999
     nodePort: 30003		
+    
+---
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mysecret
+type: Opaque
+data:
+  test_url: aHR0cDovL3Rlc3RfdXJsLmNu
