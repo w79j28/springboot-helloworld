@@ -67,8 +67,8 @@ spec:
   rules:
   - http:
       paths:
-      -path: /  
-       backend:
+      - path: /  
+        backend:
           serviceName: hello-test-service
           servicePort: 9999
         
