@@ -32,6 +32,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: hello-test-service
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
   loadBalancerIP: 104.42.168.187
   type: LoadBalancer
