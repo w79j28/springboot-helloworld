@@ -35,7 +35,7 @@ metadata:
   #annotations:
   #  service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
-  loadBalancerIP: 104.42.168.187
+  #loadBalancerIP: 104.42.168.187
   type: LoadBalancer
   #type: NodePort 
   selector:
@@ -52,3 +52,20 @@ metadata:
 type: Opaque
 data:
   test_url: aHR0cDovL3Rlc3RfdXJsLmNu
+  
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hello-test-ingress
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - host: hello-test.e6168713fef64be3964a.westus.aksapp.io
+    http:
+      paths:
+      - backend:
+          serviceName: hello-test-service
+          servicePort: 9999
+        path: /  
