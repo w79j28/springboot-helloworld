@@ -65,7 +65,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: hello-test.e6168713fef64be3964a.westus.aksapp.io
+  #- host: hello-test.e6168713fef64be3964a.westus.aksapp.io
     http:
       paths:
       - backend:
