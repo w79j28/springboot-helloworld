@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-test-deployment
+  labels:
+    app: hello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: hello
+  template:
+    metadata:
+      labels:
+        app: hello
+    spec:
+      containers:
+        - name: hello-test
+          image: 192.168.15.120:5000/hello_images:v9
+          env:
+            - name: TEST_URL
+              valueFrom:
+                secretKeyRef:
+                 name: mysecret
+                 key: test_url
+          ports:
+            - containerPort: 9999
+        
+      imagePullSecrets:
+        - name: myregistrykey
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-test-service
+spec:
+  #type: LoadBalancer
+  type: NodePort 
+  selector:
+    app: hello
+  ports:
+  - port: 9999
+    nodePort: 30003		
