@@ -65,10 +65,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - hello-test.e6168713fef64be3964a.westus.aksapp.io
+    - hello-test-aks-ingress.westus.cloudapp.azure.com
     secretName: tls-secret
   rules:
-  - host: hello-test.e6168713fef64be3964a.westus.aksapp.io
+  - host: hello-test-aks-ingress.westus.cloudapp.azure.com
     http:
       paths:
       - backend:
