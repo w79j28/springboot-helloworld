@@ -35,7 +35,7 @@ metadata:
   annotations:
     service.beta.kubernetes.io/azure-load-balancer-internal: "true"
 spec:
-  loadBalancerIP: 104.42.168.187
+  #loadBalancerIP: 104.42.168.187
   type: LoadBalancer
   #type: NodePort 
   selector:
