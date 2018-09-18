@@ -20,7 +20,8 @@ pipeline {
             steps {
 
                 script {
-                    sh 'docker rmi -f 192.168.15.120:5000/my-image:48'
+                    acsDeploy azureCredentialsId: 'azure_service_principal', configFilePaths: 'hello-test.yaml', containerService: 'rawebkubernetes | AKS', dcosDockerCredentialsPath: '', enableConfigSubstitution: true, resourceGroupName: 'raweb917', secretName: '', sshCredentialsId: 'slave_ssh_key'
+
                 }
                 slackSend message: 'deploy'
             }
