@@ -59,15 +59,8 @@ kind: Ingress
 metadata:
   name: hello-test-ingress
   annotations:
-    #kubernetes.io/ingress.class: nginx
     kubernetes.io/ingress.class: addon-http-application-routing
-    certmanager.k8s.io/cluster-issuer: letsencrypt-staging
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  tls:
-  - hosts:
-    - hello-test.e6168713fef64be3964a.westus.aksapp.io
-    secretName: tls-secret
   rules:
   - host: hello-test.e6168713fef64be3964a.westus.aksapp.io
     http:
@@ -75,4 +68,4 @@ spec:
       - backend:
           serviceName: hello-test-service
           servicePort: 9999
-        path: /  
+          path: /  
