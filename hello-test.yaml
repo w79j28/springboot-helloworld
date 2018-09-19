@@ -66,10 +66,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - mydns.westus.cloudapp.azure.com
+    - mytest-aks-ingress.westus.cloudapp.azure.com
     secretName: tls-secret
   rules:
-  - host: mydns.westus.cloudapp.azure.com
+  - host: mytest-aks-ingress.westus.cloudapp.azure.com
   - http:
       paths:
       - path: /abc
