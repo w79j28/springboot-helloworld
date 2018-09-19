@@ -38,7 +38,6 @@ spec:
   #loadBalancerIP: 104.42.168.187
   #type: LoadBalancer
   #type: NodePort 
-  type: ClusterIP
   selector:
     app: hello
   ports:
