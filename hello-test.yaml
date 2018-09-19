@@ -72,6 +72,10 @@ spec:
   - host: mydns.westus.cloudapp.azure.com
   - http:
       paths:
+      - path: /abc
+        backend:
+          serviceName: aks-helloworld
+          servicePort: 80
       - path: /  
         backend:
           serviceName: hello-test-service
