@@ -20,7 +20,7 @@ pipeline {
             steps {
 
                 script {
-                    acsDeploy azureCredentialsId: 'azure_service_principal', configFilePaths: 'hello-test.yaml', containerService: 'rawebkubernetes | AKS', dcosDockerCredentialsPath: '', enableConfigSubstitution: true, resourceGroupName: 'raweb917', secretName: '', sshCredentialsId: 'slave_ssh_key'
+                    acsDeploy azureCredentialsId: 'azure_service_principal', configFilePaths: 'hello-test.yaml', containerService: 'rawebtest2 | AKS', dcosDockerCredentialsPath: '', enableConfigSubstitution: true, resourceGroupName: 'raweb917', secretName: '', sshCredentialsId: 'slave_ssh_key'
 
                 }
                 slackSend message: 'deploy'
